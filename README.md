@@ -36,7 +36,7 @@ with **Ctrl + u**. The examples below show the mores to use:
     it should return the sum of two numbers:
     # this
     def it should return the sum of two numbers     ():
-    # or many combinations of fails sintaxe that you will have this
+    # or many combinations of fails syntax that you will have this
     def it_should_return_the_sum_of_two_numbers(self):
         |
 
