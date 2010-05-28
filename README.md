@@ -1,5 +1,5 @@
-pyBDDsnippets
-=============
+Snippetest
+==========
 
 This tool is a set of gedit snippets for python. The goal of help and speed up
 the development, mostly using BDD approach.
