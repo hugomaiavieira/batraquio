@@ -7,7 +7,7 @@ the development, mostly using BDD approach.
 I strongly recommend the you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
 
-smart_def
+Smart def
 ---------
 
 The smart_def snippet speeds up the method definition. The activation is made
