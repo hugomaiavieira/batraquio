@@ -13,32 +13,46 @@ smart_def
 The smart_def snippet speeds up the method definition. The activation is made
 with **Ctrl + u**. The examples below show the mores to use:
 
-    # Type the line below and press Ctrl + u with the cursor on the line
+Type the line below and press Ctrl + u with the cursor on the line
+
     it should return the sum of two numbers
 
-    # and you will have this (the | represents the cursor):
+and you will have this (the | represents the cursor):
+
     def it_should_return_the_sum_of_two_numbers(self):
         |
 
-    # You can pass params too
+You can pass params too
+
     it should return the sum of two numbers(number1, number2)
 
-    # and you will have this
+and you will have this
+
     def it_should_return_the_sum_of_two_numbers(self, number1, number2):
         |
 
 
-    # You can also do this
+You can also do this
+
     def it should return the sum of two numbers
-    # this
+
+this
+
     def             it should return the sum of two numbers
-    # this
+
+this
+
     it should return the sum of two numbers:
-    # this
+
+this
+
     def it should return the sum of two numbers     ():
-    # or many combinations of fails syntax that you will have this
+
+or many combinations of fails syntax that you will have this
+
     def it_should_return_the_sum_of_two_numbers(self):
         |
+
 
 step_definition
 ---------------
