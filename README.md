@@ -75,8 +75,8 @@ that gives you a lot of matchers and turns your test/specs more readable.
 Step Definition
 ---------------
 
-This snippet is based on (freshen)[http://github.com/rlisagor/freshen] step
-definition, but is functional for (pycukes)[http://github.com/hugobr/pycukes]
+This snippet is based on [freshen](http://github.com/rlisagor/freshen) step
+definition, but is functional for [pycukes](http://github.com/hugobr/pycukes)
 and (lettuce)[http://lettuce.it/] too. The difference is that you should add the
 parameter *context* or *step* respectively.
 
