@@ -31,9 +31,28 @@ class ${1:ClassName}(unittest.TestCase):
     <description>Unittest</description>
   </snippet>
   <snippet>
-    <text><![CDATA[@${1:Given/When/Then}(r'${2:step definition}')
-	]]></text>
-    <tag>st</tag>
+    <text><![CDATA[@${1:Given/When/Then}(r'${2:step definition with params (.*)}')
+$<
+import re
+params_list = re.findall(r'["|\']?\(.*?\)["|\']?', ${2})
+params_number = len(params_list)
+params = ''
+for number in range(params_number):
+    params += 'var' + str(number+1)
+    if number+1 != params_number:
+        params += ' ,'
+
+step = ${2}.lower()
+for param in params_list:
+    step = step.replace(param, '')
+step = re.sub(r'\s+$', '', step)
+step = re.sub(r'\s+', '_', step)
+
+result = 'def ' + step + '(' + params + '):'
+return result
+>
+	$0]]></text>
+    <tag>sd</tag>
     <description>Step definition</description>
   </snippet>
 </snippets>
