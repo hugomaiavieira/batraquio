@@ -10,7 +10,7 @@ and the package gedit-plugins.
 Smart def
 ---------
 
-The smart_def snippet speeds up the method definition. The activation is made
+The Smart def snippet speeds up the method definition. The activation is made
 with **Ctrl + u**. The examples below show the ways to use:
 
 Type the line below and press Ctrl + u with the cursor on the line
@@ -55,14 +55,18 @@ Or many combinations of fails syntax that you will have this:
         |
 
 
-step_definition
----------------
+Unittest
+--------
 
-Not implemented yet
+Type **ut** and then press **Tab** and you get this:
 
+    import unittest
+    from should_dsl import *
 
-Acceptance specs
-----------------
+    class class name(unittest.TestCase):
 
-Not implemented yet
+You only have to write the class name and press tab again.
+
+I assume that you use the amazing package should-dls that gives you a lot of
+matchers and turns your test more readable.
 

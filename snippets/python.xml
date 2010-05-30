@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="python">
+  <snippet>
+    <text><![CDATA[$<
+import re
+global white_spaces
+white_spaces = ''
+regex=re.compile(r'(?P<white_spaces\>\s*)(def )?(?P<method\>[_ \w]+\w)[ ]?(\((?P<params\>.*)\))?:?')
+regex=regex.match($GEDIT_CURRENT_LINE)
+if regex:
+    dictionary=regex.groupdict()
+    method=dictionary['method'].replace(' ','_')
+    white_spaces=dictionary['white_spaces']
+    params= dictionary['params'] and dictionary['params'] or 'self'
+    result = white_spaces + 'def ' + method + '(' + params + '):'
+else:
+    result = $GEDIT_CURRENT_LINE
+return result
+>
+	$<return white_spaces>]]></text>
+    <accelerator><![CDATA[<Control>u]]></accelerator>
+    <description>Smart def</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[import unittest
+from should_dsl import *
+
+class ${1:class}(unittest.TestCase):
+	]]></text>
+    <tag>ut</tag>
+    <description>Unittest</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[@${1:Given/When/Then}(r'${2:step definition}')
+	]]></text>
+    <tag>st</tag>
+    <description>Step definition</description>
+  </snippet>
+</snippets>
+
