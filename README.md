@@ -63,10 +63,10 @@ Type **ut** and then press **Tab** and you get this:
     import unittest
     from should_dsl import *
 
-    class class name(unittest.TestCase):
+    class ClassName(unittest.TestCase):
 
 You only have to write the class name and press tab again.
 
-I assume that you use the amazing package should-dls that gives you a lot of
-matchers and turns your test more readable.
+I assume that you use the amazing package [should-dls](http://github.com/hugobr/should-dsl)
+that gives you a lot of matchers and turns your test/specs more readable.
 

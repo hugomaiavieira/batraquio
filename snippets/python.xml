@@ -25,7 +25,7 @@ return result
     <text><![CDATA[import unittest
 from should_dsl import *
 
-class ${1:class}(unittest.TestCase):
+class ${1:ClassName}(unittest.TestCase):
 	]]></text>
     <tag>ut</tag>
     <description>Unittest</description>
