@@ -64,6 +64,7 @@ Type **ut** and then press **Tab** and you get this:
     from should_dsl import *
 
     class ClassName(unittest.TestCase):
+        |
 
 You only have to write the class name and press tab again.
 
