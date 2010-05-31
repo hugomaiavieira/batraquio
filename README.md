@@ -77,7 +77,7 @@ Step Definition
 
 This snippet is based on [freshen](http://github.com/rlisagor/freshen) step
 definition, but is functional for [pycukes](http://github.com/hugobr/pycukes)
-and (lettuce)[http://lettuce.it/] too. The difference is that you should add the
+and [lettuce](http://lettuce.it) too. The difference is that you should add the
 parameter *context* or *step* respectively.
 
 Type **sd** and press **Tab** and you get this:
