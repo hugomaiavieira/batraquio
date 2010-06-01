@@ -1,14 +1,14 @@
-Snippetest
-==========
+Batraquio
+========
 
-This tool is a set of gedit snippets for python. The goal of help and speed up
+Batraquio is a set of gedit snippets for python. The goal of help and speed up
 the development, mostly using BDD approach.
 
 I strongly recommend the you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
 
 Smart def
----------
+--------
 
 The Smart def snippet speeds up the method definition. The activation is made
 with **Ctrl + u**. The examples below show the ways to use:
@@ -31,7 +31,7 @@ And you will have this:
     def it_should_return_the_sum_of_two_numbers(self, number1, number2):
         |
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 You can also do this...
 
