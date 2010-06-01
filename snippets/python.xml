@@ -11,7 +11,7 @@ if regex:
     dictionary=regex.groupdict()
     method=dictionary['method'].replace(' ','_')
     white_spaces=dictionary['white_spaces']
-    params= dictionary['params'] and dictionary['params'] or 'self'
+    params= dictionary['params'] and 'self, ' + dictionary['params'] or 'self'
     result = white_spaces + 'def ' + method + '(' + params + '):'
 else:
     result = $GEDIT_CURRENT_LINE
