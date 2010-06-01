@@ -55,5 +55,208 @@ return result
     <tag>sd</tag>
     <description>Step definition</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[${1:actual} |should_be| ${2:expected}
+$0]]></text>
+    <tag>be</tag>
+    <description>Should be</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:actual} |should_not_be| ${2:expected}
+$0]]></text>
+    <tag>notbe</tag>
+    <description>Should not be</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_have| ${2:items}
+$0]]></text>
+    <tag>have</tag>
+    <description>Should have</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_not_have| ${2:items}
+$0]]></text>
+    <tag>nothave</tag>
+    <description>Should not have</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:items} |should_be| into(${2:collection})
+$0]]></text>
+    <tag>into</tag>
+    <description>Should be into</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:items} |should_not_be| into(${2:collection})
+$0]]></text>
+    <tag>notinto</tag>
+    <description>Should not be into</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:actual} |should_be| equal_to({2:expect})
+$0]]></text>
+    <tag>equal</tag>
+    <description>Should be equal to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:actual} |should_not_be| equal_to({2:expect})
+$0]]></text>
+    <tag>notequal</tag>
+    <description>Should not be equal to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_have| all_of({2:items})
+$0]]></text>
+    <tag>allof</tag>
+    <description>Should have all of</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_not_have| all_of({2:items})
+$0]]></text>
+    <tag>notallof</tag>
+    <description>Should not have all of</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_have| any_of({2:items})
+$0]]></text>
+    <tag>anyof</tag>
+    <description>Should have any of</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_not_have| any_of({2:items})
+$0]]></text>
+    <tag>notanyof</tag>
+    <description>Should not have any of</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:string} |should_be| ended_with({2:substring})
+$0]]></text>
+    <tag>ended</tag>
+    <description>Should be ended with</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:string} |should_not_be| ended_with({2:substring})
+$0]]></text>
+    <tag>notended</tag>
+    <description>Should not be ended with</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:bigger} |should_be| greater_than({2:smaller})
+$0]]></text>
+    <tag>greater</tag>
+    <description>Should be greater than</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:bigger} |should_not_be| greater_than({2:smaller})
+$0]]></text>
+    <tag>notgreater</tag>
+    <description>Should not be greater than</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:bigger} |should_be| greater_than_or_equal_to({2:smaller})
+$0]]></text>
+    <tag>greaterequal</tag>
+    <description>Should be greater than or equal to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:bigger} |should_not_be| greater_than_or_equal_to({2:smaller})
+$0]]></text>
+    <tag>notgreaterequal</tag>
+    <description>Should not be greater than or equal to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:instance} |should_be| kind_of({2:class})
+$0]]></text>
+    <tag>kind</tag>
+    <description>Should be kind of</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:instance} |should_not_be| kind_of({2:class})
+$0]]></text>
+    <tag>notkind</tag>
+    <description>Should not be kind of</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:smaller} |should_be| less_than({2:bigger})
+$0]]></text>
+    <tag>less</tag>
+    <description>Should be less than</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:smaller} |should_not_be| less_than({2:bigger})
+$0]]></text>
+    <tag>notless</tag>
+    <description>Should not be less than</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:smaller} |should_be| less_than_or_equal_to({2:bigger})
+$0]]></text>
+    <tag>lessequal</tag>
+    <description>Should be less than or equal to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:smaller} |should_not_be| less_than_or_equal_to({2:bigger})
+$0]]></text>
+    <tag>notlessequal</tag>
+    <description>Should not be less than or equal to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:actual} |should_be| equal_to_ignoring_case({2:expect})
+$0]]></text>
+    <tag>equalignoring</tag>
+    <description>Should be equal to ignoring case</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:actual} |should_not_be| equal_to_ignoring_case({2:expect})
+$0]]></text>
+    <tag>notequalignoring</tag>
+    <description>Should not be equal to ignoring case</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_have| in_any_order({2:items})
+$0]]></text>
+    <tag>anyorder</tag>
+    <description>Should have in any order</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:collection} |should_not_have| in_any_order({2:items})
+$0]]></text>
+    <tag>notanyorder</tag>
+    <description>Should not have in any order</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:string} |should_be| like(${2:regex})
+$0]]></text>
+    <tag>like</tag>
+    <description>Should be like</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:string} |should_not_be| like(${2:regex})
+$0]]></text>
+    <tag>notlike</tag>
+    <description>Should not be like</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:raiser} |should| throw(${2:exception})
+$0]]></text>
+    <tag>throw</tag>
+    <description>Should throw</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:raiser} |should_not| throw(${2:exception})
+$0]]></text>
+    <tag>notthrow</tag>
+    <description>Should not throw</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:exception} |should_be| throw_by(${2:raiser})
+$0]]></text>
+    <tag>throwby</tag>
+    <description>Should be throw by</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[${1:exception} |should_not_be| throw_by(${2:raiser})
+$0]]></text>
+    <tag>notthrowby</tag>
+    <description>Should not be throw by</description>
+  </snippet>
 </snippets>
-

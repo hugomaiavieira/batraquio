@@ -126,6 +126,7 @@ $0
 
 # Should not have in any order (nanyorder)
 ${1:collection} |should_not_have| in_any_order({2:items})
+$0
 
 # should be like (bl)
 ${1:string} |should_be| like(${2:regex})
