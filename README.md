@@ -67,7 +67,7 @@ Type **ut** and then press **Tab** and you get this:
 
 You only have to write the class name and press tab again.
 
-I assume that you use the amazing package [should-dls](http://github.com/hugobr/should-dsl)
+I assume that you use the amazing package [should-dsl](http://github.com/hugobr/should-dsl)
 that gives you a lot of matchers and turns your test/specs more readable.
 
 
