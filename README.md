@@ -37,15 +37,7 @@ You can also do this...
 
 This...
 
-    def             it should return the sum of two numbers
-
-This...
-
-    it should return the sum of two numbers:
-
-This...
-
-    def it should return the sum of two numbers     ():
+    def it should return the sum of two numbers ():
 
 Or many combinations of fails syntax that you will have this:
 
@@ -91,7 +83,7 @@ based on the regex finded in the step definition text.
 
 ##Should-dsl
 
-Should-dsl is an amazing python package [should-dls](http://github.com/hugobr/should-dsl)
+[Should-dsl](http://github.com/hugobr/should-dsl) is an amazing python package
 that gives you a lot of matchers and turns your test/specs more readable.
 
 Batraquio has snippets for all matchers of should-dsl. What you have to do is
