@@ -6,6 +6,12 @@ the development, mostly using BDD approach.
 I strongly recommend the you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
 
+##Install
+
+To install, just do this on terminal:
+
+    ./install.sh
+
 ##Smart def
 
 The Smart def snippet speeds up the method definition. The activation is made
@@ -176,4 +182,9 @@ will not be demonstrate.
 * Should be throw by
 
     `exception |should| be_throw_by(call)`
+
+
+##Next steps
+
+Add snippets for django template tags and most common licences text.
 
