@@ -6,6 +6,10 @@ the development, mostly using BDD approach.
 I strongly recommend the you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
 
+**Obs.:** I'm using *it* instead *test* in the methods because I use the
+[Specloud](http://github.com/hugobr/specloud) to run my specs. With that I can
+write specifications instead mere tests.
+
 ##Install
 
 To install, just do this on terminal:
