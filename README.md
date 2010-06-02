@@ -1,6 +1,6 @@
 #Batraquio
 
-Batraquio is a set of gedit snippets for python. The goal of help and speed up
+Batraquio is a set of gedit snippets for python. The goal is help and speed up
 the development, mostly using BDD approach.
 
 I strongly recommend the you install the [gmate](http://github.com/gmate/gmate)
