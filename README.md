@@ -107,73 +107,73 @@ will not be demonstrate.
 
 * Should be (be)
 
-    actual |should| be(expected)
+    `actual |should| be(expected)`
 
 * Should not be (notbe)
 
-    actual |should_not| be(expected)
+    `actual |should_not| be(expected)`
 
 * Should have (have)
 
-    collection |should| have(items)
+    `collection |should| have(items)`
 
 * Should be into (into)
 
-    item |should| be_into(collection)
+    `item |should| be_into(collection)`
 
 * Should be equal to (equal)
 
-    actual |should| be_equal_to(expect)
+    `actual |should| be_equal_to(expect)`
 
 * Should have all of (allof)
 
-    collection |should| have_all_of(iterable)
+    `collection |should| have_all_of(iterable)`
 
 * Should have any of (anyof)
 
-    collection |should| have_any_of(iterable)
+    `collection |should| have_any_of(iterable)`
 
 * Should be ended with (ended)
 
-    string |should| be_ended_with(substring)
+    `string |should| be_ended_with(substring)`
 
 * Should be greater than (greater)
 
-    actual |should| be_greater_than(expected)
+    `actual |should| be_greater_than(expected)`
 
 * Should be greater than or equal to (greaterequal)
 
-    actual |should| be_greater_than_or_equal_to(expected)
+    `actual |should| be_greater_than_or_equal_to(expected)`
 
 * Should be kind of (kind)
 
-    instance |should| be_kind_of(class)
+    `instance |should| be_kind_of(class)`
 
 * Should be less than (less)
 
-    actual |should| be_less_than(expected)
+    `actual |should| be_less_than(expected)`
 
 * Should be less than or equal to (lessequal)
 
-    actual |should| be_less_than_or_equal_to(expected)
+    `actual |should| be_less_than_or_equal_to(expected)`
 
 * Should be equal to ignoring case (ignoring)
 
-    actual |should| be_equal_to_ignoring_case(expect)
+    `actual |should| be_equal_to_ignoring_case(expect)`
 
 * Should have in any order
 
-    collection |should| have_in_any_order(iterable)
+    `collection |should| have_in_any_order(iterable)`
 
 * Should be like
 
-    string |should| be_like(regex)
+    `string |should| be_like(regex)`
 
 * Should throw
 
-    call |should| throw(exception)
+    `call |should| throw(exception)`
 
 * Should be throw by
 
-    exception |should| be_throw_by(call)
+    `exception |should| be_throw_by(call)`
 
