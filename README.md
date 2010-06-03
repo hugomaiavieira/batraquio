@@ -135,6 +135,18 @@ will not be demonstrate.
 
     `item |should| be_into(collection)`
 
+* Should have (have)
+
+    `collection |should| have(quantity).something`
+
+* Should have at most (atmost)
+
+    `collection |should| have_at_most(quantity).something`
+
+* Should have at least (atleast)
+
+    `collection |should| have_at_least(quantity).something`
+
 * Should be equal to (equal)
 
     `actual |should| be_equal_to(expect)`
@@ -190,6 +202,10 @@ will not be demonstrate.
 * Should be thrown by
 
     `exception |should| be_thrown_by(call)`
+
+* Should respond to
+
+    `object |should| respond_to('method')`
 
 
 ##Next steps

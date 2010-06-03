@@ -271,5 +271,53 @@ $0]]></text>
     <tag>notthrownby</tag>
     <description>Should not be thrown by</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[|should| have(${1:quantity}).${2:something}
+$0]]></text>
+    <tag>have</tag>
+    <description>Should have</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| have(${1:quantity}).${2:something}
+$0]]></text>
+    <tag>nothave</tag>
+    <description>Should not have</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| have_at_most(${1:quantity}).${2:something}
+$0]]></text>
+    <tag>atmost</tag>
+    <description>Should have at most</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| have_at_most(${1:quantity}).${2:something}
+$0]]></text>
+    <tag>notatmost</tag>
+    <description>Should not have at most</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| have_at_least(${1:quantity}).${2:something}
+$0]]></text>
+    <tag>atleast</tag>
+    <description>Should have at least</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| have_at_least(${1:quantity}).${2:something}
+$0]]></text>
+    <tag>notatleast</tag>
+    <description>Should not have at least</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| respond_to('${1:method}')
+$0]]></text>
+    <tag>respond</tag>
+    <description>Should respond to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| respond_to('${1:method}')
+$0]]></text>
+    <tag>notrespond</tag>
+    <description>Should not respond to</description>
+  </snippet>
 </snippets>
 
