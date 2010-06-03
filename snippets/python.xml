@@ -70,14 +70,26 @@ $0]]></text>
   <snippet>
     <text><![CDATA[|should| include(${1:items})
 $0]]></text>
-    <tag>have</tag>
+    <tag>include</tag>
     <description>Should include</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should_not| include(${1:items})
 $0]]></text>
-    <tag>nothave</tag>
+    <tag>notinclude</tag>
     <description>Should not include</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| contain(${1:items})
+$0]]></text>
+    <tag>contain</tag>
+    <description>Should contain</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| contain(${1:items})
+$0]]></text>
+    <tag>notcontain</tag>
+    <description>Should not contain</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| be_into(${1:collection})

@@ -127,6 +127,10 @@ will not be demonstrate.
 
     `collection |should| include(items)`
 
+* Should contain (contain)
+
+    `collection |should| contain(items)`
+
 * Should be into (into)
 
     `item |should| be_into(collection)`
