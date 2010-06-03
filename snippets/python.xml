@@ -248,16 +248,16 @@ $0]]></text>
     <description>Should not throw</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should| be_throw_by(${1:call})
+    <text><![CDATA[|should| be_thrown_by(${1:call})
 $0]]></text>
-    <tag>throwby</tag>
-    <description>Should be throw by</description>
+    <tag>thrownby</tag>
+    <description>Should be thrown by</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should_not| be_throw_by(${1:call})
+    <text><![CDATA[|should_not| be_thrown_by(${1:call})
 $0]]></text>
-    <tag>notthrowby</tag>
-    <description>Should not be throw by</description>
+    <tag>notthrownby</tag>
+    <description>Should not be thrown by</description>
   </snippet>
 </snippets>
 
