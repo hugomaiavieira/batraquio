@@ -123,9 +123,9 @@ will not be demonstrate.
 
     `actual |should_not| be(expected)`
 
-* Should have (have)
+* Should include (include)
 
-    `collection |should| have(items)`
+    `collection |should| include(items)`
 
 * Should be into (into)
 

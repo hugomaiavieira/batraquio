@@ -68,16 +68,16 @@ $0]]></text>
     <description>Should not be</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should| have(${1:items})
+    <text><![CDATA[|should| include(${1:items})
 $0]]></text>
     <tag>have</tag>
-    <description>Should have</description>
+    <description>Should include</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should_not| have(${1:items})
+    <text><![CDATA[|should_not| include(${1:items})
 $0]]></text>
     <tag>nothave</tag>
-    <description>Should not have</description>
+    <description>Should not include</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| be_into(${1:collection})
