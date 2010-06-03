@@ -183,9 +183,9 @@ will not be demonstrate.
 
     `call |should| throw(exception)`
 
-* Should be throw by
+* Should be thrown by
 
-    `exception |should| be_throw_by(call)`
+    `exception |should| be_thrown_by(call)`
 
 
 ##Next steps
