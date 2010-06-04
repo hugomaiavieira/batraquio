@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets>
+  <snippet>
+    <text><![CDATA[$<
+def formata_linha(linha):
+    pos_pipe = linha.find('|')
+    linha = linha[pos_pipe:]
+    linha_split = linha.split('|')
+    if linha[0:1]== '|':
+        del linha_split[0]
+    if linha[-1:]== '|':
+        del linha_split[-1]
+    return linha_split
+
+def popula_matriz_e_max(matriz, max_coluna, linha):
+    linha = formata_linha(linha)
+    for coluna in linha:
+        coluna = coluna.strip()
+        matriz.append([coluna])
+        max_coluna.append(len(coluna))
+
+linhas = $GEDIT_SELECTED_TEXT.decode("utf-8").split('\n')
+
+if linhas[-1] == '':
+    del linhas[-1]
+
+matriz = []
+max_coluna = []
+
+popula_matriz_e_max(matriz, max_coluna, linhas[0])
+
+linhas = linhas[1:]
+for linha_pos in range(len(linhas)):
+    linha = linhas[linha_pos]
+    linha = formata_linha(linha)
+    for coluna in range(len(linha)):
+        palavra = linha[coluna]
+        palavra = palavra.strip()
+        matriz[coluna].append(palavra)
+        if max_coluna[coluna] < len(palavra):
+            max_coluna[coluna] = len(palavra)
+
+tabela = ''
+for linha_pos in range(len(matriz[0])):
+    tabela += '|'
+    for coluna_pos in range(len(matriz)):
+        tamanho_da_celula = max_coluna[coluna_pos];
+        celula = ' ' + matriz[coluna_pos][linha_pos].ljust(tamanho_da_celula) + ' '
+        tabela += celula
+        tabela += '|'
+    tabela += '\n'
+
+return tabela
+>]]></text>
+    <accelerator><![CDATA[<Shift><Control>f]]></accelerator>
+    <description>Align Table</description>
+  </snippet>
+</snippets>

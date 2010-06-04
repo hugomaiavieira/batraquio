@@ -90,6 +90,24 @@ and the method will be created. The name for the method is created replacing
 spaces for undescore on the step definition text. The params list is created
 based on the regex finded in the step definition text.
 
+
+##Table alignment
+
+Let's say you are using Cucumber to use a BDD approach on your project.
+And let's say that you are working with table on your tests.
+So, if you digit:
+
+    |ab|cdefg|
+    |foo|bar|
+
+Select this text, and press SHIFT+CTRL+F, the result should be:
+
+    | ab  | cdefg |
+    | foo | bar   |
+
+instantly.
+
+
 ##Method Location
 
 Tool name: **Open Method Definition**
