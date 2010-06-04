@@ -112,7 +112,7 @@ instantly.
 
 Tool name: **Open Method Definition**
 
-Shortcut=Shift+Control+D
+Shortcut=Shift+Control+E
 
 Applicability: Python files (.py), Ruby Files (.rb)
 

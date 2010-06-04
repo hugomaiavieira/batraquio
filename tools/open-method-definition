@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # [Gedit Tool]
 # Name=Open Method Definition
-# Shortcut=<Shift><Control>d
+# Shortcut=<Shift><Control>e
 # Applicability=all
 # Output=nothing
 # Input=nothing
@@ -49,3 +49,4 @@ if match != None:
     Popen('gedit ' + file_found_with_line,shell=True,stdin=PIPE,stdout=PIPE)
 else:
     print "File type doesn't have a method definition specified."
+
