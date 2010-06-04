@@ -118,7 +118,7 @@ Applicability: Python files (.py), Ruby Files (.rb)
 
 Dependency: To use this tool, the plugin "File Browser" in Gedit have to be enabled, and you have to be in your workspace dir.
 The plugin "External Tools" also have to be enabled. <br/>
-IMPORTANT: You have to put a file named '.this\_is\_the\_root\_folder' on the project root folder. (this is a hidden file) (read example for more instructions)<br/>
+IMPORTANT: You have to put a file named '.this\_is\_the\_root\_folder' on the project root folder. (this is a hidden and blank file) (read example for more instructions)<br/>
 I also strongly recommend that you install the package 'ack-grep', to improve accuracy of the search (because ack-grep will ignore unwanted folders used by some CVS systems or things like that).<br/>
 If you doesn't have 'ack-grep' installed, you can install it in a Debian-like distribution doing:<br/>
 [sudo] apt-get install ack-grep<br/>
