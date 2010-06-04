@@ -118,7 +118,7 @@ And my Gedit is opened, editing only one file named "main.py", that is located o
     if __name__=="__main__":
         foo()
 
-If select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut <Shift>+<Control>+D
+If I select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut Shift+Control+D
 the file "extension.py" will be opened on the line 5, the exact location that defines the method "foo"
 
 
