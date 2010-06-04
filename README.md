@@ -117,19 +117,19 @@ Shortcut=Shift+Control+E
 Applicability: Python files (.py), Ruby Files (.rb)
 
 Dependency: To use this tool, the plugin "File Browser" in Gedit have to be enabled, and you have to be in your workspace dir.
-The plugin "External Tools" also have to be enabled.
-IMPORTANT: You have to put a file named '.this_is_the_root_folder' on the project root folder. (read example for more instructions)
-I also strongly recommend that you install the package 'ack-grep', to improve accuracy of the search (because ack-grep will ignore unwanted folders used by some CVS systems or things like that).
-If you doesn't have 'ack-grep' installed, you can install it in a Debian-like distribution doing:
-[sudo] apt-get install ack-grep
+The plugin "External Tools" also have to be enabled. <br/>
+IMPORTANT: You have to put a file named '.this\_is\_the\_root\_folder' on the project root folder. (this is a hidden file) (read example for more instructions)<br/>
+I also strongly recommend that you install the package 'ack-grep', to improve accuracy of the search (because ack-grep will ignore unwanted folders used by some CVS systems or things like that).<br/>
+If you doesn't have 'ack-grep' installed, you can install it in a Debian-like distribution doing:<br/>
+[sudo] apt-get install ack-grep<br/>
 
-Description: Select a method name, press the shortcut specified, and gedit should open the file that specify this method.
+Description: Select a method name, press the shortcut specified, and gedit should open the file that specify this method.<br/><br/>
 Example: I have a file named "extension.py", that defines a method like this:
 
     def foo(bar="hello"): #this definition is on line 5 of this file
         pass
 
-It's location is './product/modules/'.
+It's location is './product/modules/'.<br/>
 And my Gedit is opened, editing only one file named "main.py", that is located on "./product/", and have this on it:
 
     from modules.extension import foo
@@ -137,8 +137,8 @@ And my Gedit is opened, editing only one file named "main.py", that is located o
     if __name__=="__main__":
         foo()
 
-I put a file named '.this_is_the_root_folder' on the path './product/', to indicate the tool that this is my project root folder.
-If I select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut Shift+Control+D
+I put a file named '.this\_is\_the\_root\_folder' on the path './product/', to indicate the tool that this is my project root folder.<br/>
+If I select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut Shift+Control+E<br/>
 the file "extension.py" will be opened on the line 5, the exact location that defines the method "foo"
 
 
