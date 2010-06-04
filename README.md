@@ -118,6 +118,7 @@ Applicability: Python files (.py), Ruby Files (.rb)
 
 Dependency: To use this tool, the plugin "File Browser" in Gedit have to be enabled, and you have to be in your workspace dir.
 The plugin "External Tools" also have to be enabled.
+IMPORTANT: You have to put a file named '.this_is_the_root_folder' on the project root folder. (read example for more instructions)
 I also strongly recommend that you install the package 'ack-grep', to improve accuracy of the search (because ack-grep will ignore unwanted folders used by some CVS systems or things like that).
 If you doesn't have 'ack-grep' installed, you can install it in a Debian-like distribution doing:
 [sudo] apt-get install ack-grep
@@ -136,6 +137,7 @@ And my Gedit is opened, editing only one file named "main.py", that is located o
     if __name__=="__main__":
         foo()
 
+I put a file named '.this_is_the_root_folder' on the path './product/', to indicate the tool that this is my project root folder.
 If I select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut Shift+Control+D
 the file "extension.py" will be opened on the line 5, the exact location that defines the method "foo"
 
