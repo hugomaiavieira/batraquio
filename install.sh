@@ -29,3 +29,27 @@ else
     fi
 fi
 
+# Copy Tools
+if [ ! -d $HOME/.gnome2/gedit/tools ]
+then
+    mkdir -p ~/.gnome2/gedit/tools
+    cp $FOLDER/tools/* ~/.gnome2/gedit/tools/
+else
+    for FILE in $(ls $FOLDER/tools/); do
+        if [ ! -e ~/.gnome2/gedit/tools/$FILE ]
+        then
+            cp $FOLDER/tools/$FILE ~/.gnome2/gedit/tools/
+        else
+            echo -n 'The file ' $FILE ' already exist, do you want to replace it (y/n)? '
+            read option
+            if [ $option = 'y' ]
+            then
+                cp $FOLDER/tools/$FILE ~/.gnome2/gedit/tools/
+                echo 'File replaced.'
+            else
+                echo 'File not replaced.'
+            fi
+        fi
+    done
+fi
+

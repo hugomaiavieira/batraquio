@@ -1,9 +1,9 @@
 #Batraquio
 
-Batraquio is a set of gedit snippets for python. The goal is help and speed up
+Batraquio is a set of gedit snippets and tools for python. The goal is help and speed up
 the development, mostly using BDD approach.
 
-I strongly recommend the you install the [gmate](http://github.com/gmate/gmate)
+I strongly recommend that you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
 
 **Obs.:** I'm using *it* instead *test* in the methods because I use the
@@ -89,6 +89,33 @@ You only have to write *Given*, *When* or *Then* (for freshen or pycukes) or
 and the method will be created. The name for the method is created replacing
 spaces for undescore on the step definition text. The params list is created
 based on the regex finded in the step definition text.
+
+##Method Location
+
+Tool name: **Open Method Definition**
+Shortcut=<Shift>+<Control>+D
+Applicability: Python files (.py), Ruby Files (.rb)
+Dependency: To use this tool, the plugin "File Browser" in Gedit have to be enabled, and you have to be in your workspace dir.
+I also strongly recommend that you install the package 'ack-grep', to improve accuracy of the search (because ack-grep will ignore unwanted folders used by some CVS systems or things like that).
+If you doesn't have 'ack-grep' installed, you can install it in a Debian-like distribution doing:
+[sudo] apt-get install ack-grep
+
+Description: Select a method name, press the shortcut specified, and gedit should open the file that specify this method.
+Example: I have a file named "extension.py", that defines a method like this:
+
+    def foo(bar="hello"): #this definition is on line 5 of this file
+        pass
+
+It's location is './product/modules/'.
+And my Gedit is opened, editing only one file named "main.py", that is located on "./product/", and have this on it:
+
+    from modules.extension import foo
+
+    if __name__=="__main__":
+        foo()
+
+If select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut <Shift>+<Control>+D
+the file "extension.py" will be opened on the line 5, the exact location that defines the method "foo"
 
 
 ##Should-dsl

@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+# [Gedit Tool]
+# Name=Open Method Definition
+# Shortcut=<Shift><Control>d
+# Applicability=all
+# Output=nothing
+# Input=nothing
+# Save-files=nothing
+
+
+import os
+import re
+from subprocess import Popen, PIPE
+
+#define file types that can be handled
+FILETYPE_DEF_METHODS = {
+        'py': 'def ',
+        'rb': 'def ',
+    }
+
+#find file type
+current_file = os.getenv("GEDIT_CURRENT_DOCUMENT_PATH")
+match = re.search('\.(py|rb|html|htm|xml|feature)$', current_file)
+
+if match != None:
+    file_type = match.group(1)
+    #take the selected word (even the one before the first '(')
+    function_name = os.getenv("GEDIT_SELECTED_TEXT").split('(')[0]
+    function_definition = FILETYPE_DEF_METHODS[file_type] + function_name
+    file_path = os.getenv("GEDIT_CURRENT_DOCUMENT_DIR")
+
+    cmd_sed = r'sed "s/\(.*\):\([0-9]\):.*/\1 +\2/"'
+    #try to use ack-grep to search
+    try:
+        cmd_grep = ["ack-grep", "--no-color", "--max-count=1", "--no-group", function_definition, file_path]
+        first_exec = Popen(cmd_grep,stdout=PIPE)#+ '|' + cmd_sed
+        execution = Popen(cmd_sed, shell=True, stdin=first_exec.stdout, stdout=PIPE)
+    except:
+        #use grep instead
+        cmd_grep = cmd_grep = r'grep -R -n "' + function_definition + '" ' + file_path
+        execution = Popen(cmd_grep + '|' + cmd_sed,shell=True,stdout=PIPE)
+
+    output = execution.stdout.read()
+
+    #take the first file found
+    file_found_with_line = output.split('\n')[0]
+
+    #open file found on exact definition line with gedit
+    Popen('gedit ' + file_found_with_line,shell=True,stdin=PIPE,stdout=PIPE)
+else:
+    print "File type doesn't have a method definition specified."
