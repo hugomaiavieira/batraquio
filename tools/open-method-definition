@@ -12,12 +12,39 @@ import os
 import re
 from subprocess import Popen, PIPE
 
+def make_path(list):
+    result = os.path.sep
+    for pos, folder in enumerate(list):
+        result += list[pos]
+        if pos != len(list)-1:
+            result += os.path.sep
+    return result
+
+def find_paths(file_path):
+    folders = file_path.split(os.path.sep)[1:]
+    paths=[]
+    for pos, folder in enumerate(folders):
+        paths.append(os.path.join(folders[0:pos]))
+    paths.append(folders) #the last one combination
+    return paths[1:] #the first one is a empty list
+
+def find_root(path):
+        paths = find_paths(path)
+        paths.reverse() #to make recursively from the deeper directory to the shallowest
+        for path in paths:
+            result = make_path(path)
+            have_main = os.listdir(result).count('.this_is_the_root_folder')
+            if have_main:
+                return result
+        return False
+
 #define file types that can be handled
 FILETYPE_DEF_METHODS = {
         'py': 'def ',
         'rb': 'def ',
     }
 
+print os.getenv("GEDIT_CURRENT_DOCUMENT_DIR")
 #find file type
 current_file = os.getenv("GEDIT_CURRENT_DOCUMENT_PATH")
 match = re.search('\.(py|rb|html|htm|xml|feature)$', current_file)
@@ -27,26 +54,28 @@ if match != None:
     #take the selected word (even the one before the first '(')
     function_name = os.getenv("GEDIT_SELECTED_TEXT").split('(')[0]
     function_definition = FILETYPE_DEF_METHODS[file_type] + function_name
-    file_path = os.getenv("GEDIT_CURRENT_DOCUMENT_DIR")
+    root_path = find_root(os.getenv("GEDIT_CURRENT_DOCUMENT_DIR"))
 
     cmd_sed = r'sed "s/\(.*\):\([0-9]\):.*/\1 +\2/"'
     #try to use ack-grep to search
     try:
-        cmd_grep = ["ack-grep", "--no-color", "--max-count=1", "--no-group", function_definition, file_path]
+        cmd_grep = ["ack-grep", "--no-color", "--max-count=1", "--no-group", function_definition, root_path]
         first_exec = Popen(cmd_grep,stdout=PIPE)#+ '|' + cmd_sed
         execution = Popen(cmd_sed, shell=True, stdin=first_exec.stdout, stdout=PIPE)
     except:
         #use grep instead
-        cmd_grep = cmd_grep = r'grep -R -n "' + function_definition + '" ' + file_path
+        cmd_grep = cmd_grep = r'grep -R -n "' + function_definition + '" ' + root_path
         execution = Popen(cmd_grep + '|' + cmd_sed,shell=True,stdout=PIPE)
 
     output = execution.stdout.read()
+    
+    if output != '':
+    	#found some definition
 
-    #take the first file found
-    file_found_with_line = output.split('\n')[0]
+		  #take the first file found
+		  file_found_with_line = output.split('\n')[0]
 
-    #open file found on exact definition line with gedit
-    Popen('gedit ' + file_found_with_line,shell=True,stdin=PIPE,stdout=PIPE)
+		  #open file found on exact definition line with gedit
+		  Popen('gedit ' + file_found_with_line,shell=True,stdin=PIPE,stdout=PIPE)
 else:
     print "File type doesn't have a method definition specified."
-
