@@ -108,7 +108,7 @@ Select this text, and press SHIFT+CTRL+F, the result should be:
 instantly.
 
 
-##Method Location
+##Tool: Method Location
 
 Tool name: **Open Method Definition**
 
@@ -118,7 +118,7 @@ Applicability: Python files (.py), Ruby Files (.rb)
 
 Dependency: To use this tool, the plugin "File Browser" in Gedit have to be enabled, and you have to be in your workspace dir.
 The plugin "External Tools" also have to be enabled. <br/>
-IMPORTANT: You have to put a file named '.this\_is\_the\_root\_folder' on the project root folder. (this is a hidden and blank file) (read example for more instructions)<br/>
+**IMPORTANT**: You have to put a file named '**.this\_is\_the\_root\_folder**' on the project root folder. (this is a hidden and blank file) (read example for more instructions)<br/>
 I also strongly recommend that you install the package 'ack-grep', to improve accuracy of the search (because ack-grep will ignore unwanted folders used by some CVS systems or things like that).<br/>
 If you doesn't have 'ack-grep' installed, you can install it in a Debian-like distribution doing:<br/>
 [sudo] apt-get install ack-grep<br/>
@@ -141,6 +141,24 @@ I put a file named '.this\_is\_the\_root\_folder' on the path './product/', to i
 If I select all the word 'foo' on this file (or even all the call 'foo()'), and press the shortcut Shift+Control+E<br/>
 the file "extension.py" will be opened on the line 5, the exact location that defines the method "foo"
 
+
+##Tool: Execute File
+
+Tool name: **Execute File**
+
+Shortcut=F5
+
+Applicability: Python 2.6 (.py) | Ruby (.rb) | Browser (.html, .htm, .xml) | Cucumber (.feature) | Markdown (.md)
+
+Dependency: To use this tool, the plugin "External Tools" have to be enabled. <br/>
+You also have to install 'markdown' if you want to compile .md files. <br/>
+To do this, Debian-like distributions should do: [sudo] apt-get install markdown
+IMPORTANT: The python used to compile .py files is the one defined on system's path (using the command python).<br/>
+
+Description: Execute the working file.<br/><br/>
+Example: I'm editing a file named my_app.py. <br/>
+If I press the shortcut key F5, a panel will open and show the output of the execution of the file.<br/><br/>
+**Obs**: For Markdown files, it'll first compile it using the 'markdown' command, and than show it with your preferred browser (defined on gnome-open command).
 
 ##Should-dsl
 
