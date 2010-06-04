@@ -94,7 +94,7 @@ based on the regex finded in the step definition text.
 
 Tool name: **Open Method Definition**
 
-Shortcut=<Shift>+<Control>+D
+Shortcut=Shift+Control+D
 
 Applicability: Python files (.py), Ruby Files (.rb)
 
