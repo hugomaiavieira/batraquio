@@ -148,7 +148,7 @@ Tool name: **Execute File**
 
 Shortcut=F5
 
-Applicability: Python 2.6 (.py) | Ruby (.rb) | Browser (.html, .htm, .xml) | Cucumber (.feature) | Markdown (.md)
+Applicability: Python (.py) | Ruby (.rb) | Browser (.html, .htm, .xml) | Cucumber (.feature) | Markdown (.md)
 
 Dependency: To use this tool, the plugin "External Tools" have to be enabled. <br/>
 You also have to install 'markdown' if you want to compile .md files. <br/>

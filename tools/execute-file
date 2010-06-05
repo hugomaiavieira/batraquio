@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python
 # [Gedit Tool]
 # Name=Execute File
 # Shortcut=F5
@@ -18,11 +18,11 @@ if match is None:
     print "The current file cannot be runned"
 else:
     commands = {
-        'rb': 'ruby "{0}"',
-        'py': 'python "{0}"',
-        'feature': 'cucumber --format pretty "{0}"',
-        'browser': 'gnome-open "{0}"',
-        'md': 'markdown "{0}" > "{0}.html"; gnome-open "{0}.html"',
+        'rb': 'ruby "%(file)s"',
+        'py': 'python "%(file)s"',
+        'feature': 'cucumber --format pretty "%(file)s"',
+        'browser': 'gnome-open "%(file)s"',
+        'md': 'markdown "%(file)s" > "%(file)s.html"; gnome-open "%(file)s.html"',
     }
  
     extension = match.group(1)
@@ -30,6 +30,6 @@ else:
     if extension in ['xml', 'html', 'htm']:
         extension = 'browser'
  
-    command = commands[extension].format(current_file)
+    command = commands[extension] % {'file': current_file}
     print "Running command %s\n\n" % command
     os.system(command)
