@@ -56,7 +56,7 @@ if match != None:
     function_definition = FILETYPE_DEF_METHODS[file_type] + function_name
     root_path = find_root(os.getenv("GEDIT_CURRENT_DOCUMENT_DIR"))
 
-    cmd_sed = r'sed "s/\(.*\):\([0-9]\):.*/\1 +\2/"'
+    cmd_sed = r'sed "s/\(.*\):\([0-9]*\):.*/\1 +\2/"'
     #try to use ack-grep to search
     try:
         cmd_grep = ["ack-grep", "--no-color", "--max-count=1", "--no-group", function_definition, root_path]
