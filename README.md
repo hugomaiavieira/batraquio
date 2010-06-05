@@ -95,7 +95,8 @@ based on the regex finded in the step definition text.
 
 ###Table alignment
 
-Let's say you are using Cucumber to use a BDD approach on your project.
+Let's say you are using Cucumber (or some Cucumber like) to use a BDD approach
+on your project.
 And let's say that you are working with table on your tests.
 So, if you digit:
 
