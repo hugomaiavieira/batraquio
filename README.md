@@ -170,9 +170,9 @@ will not be demonstrate.
 
     `collection |should| have_at_least(quantity).something`
 
-* Should be equal to (equal)
+* Should equal to (equal)
 
-    `actual |should| be_equal_to(expect)`
+    `actual |should| equal_to(expect)`
 
 * Should have all of (allof)
 

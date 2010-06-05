@@ -104,16 +104,16 @@ $0]]></text>
     <description>Should not be into</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should| be_equal_to(${1:expect})
+    <text><![CDATA[|should| equal_to(${1:expect})
 $0]]></text>
     <tag>equal</tag>
-    <description>Should be equal to</description>
+    <description>Should equal to</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should_not| be_equal_to(${1:expect})
+    <text><![CDATA[|should_not| equal_to(${1:expect})
 $0]]></text>
     <tag>notequal</tag>
-    <description>Should not be equal to</description>
+    <description>Should not equal to</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| have_all_of(${1:iterable})
