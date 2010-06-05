@@ -99,13 +99,17 @@ Let's say you are using Cucumber to use a BDD approach on your project.
 And let's say that you are working with table on your tests.
 So, if you digit:
 
-    |ab|cdefg|
-    |foo|bar|
+    | name  | email |
+    | Hugo Maia Vieira | hugomaiavieira@gmail.com |
+    | Gabriel L. Oliveira | ciberglo@gmail.com |
+    | Rodrigo Manhães | rmanhaes@gmail.com |
 
-Select this text, and press SHIFT+CTRL+F, the result should be:
+Select this text, and press **SHIFT+CTRL+F**, the result should be:
 
-    | ab  | cdefg |
-    | foo | bar   |
+    | name                | email                    |
+    | Hugo Maia Vieira    | hugomaiavieira@gmail.com |
+    | Gabriel L. Oliveira | ciberglo@gmail.com       |
+    | Rodrigo Manhães     | rmanhaes@gmail.com       |
 
 instantly.
 
