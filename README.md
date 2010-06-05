@@ -230,6 +230,9 @@ will not be demonstrate.
 
     `object |should| respond_to('method')`
 
+* Should close to
+
+    `actual |should| close_to(value, delta)`
 
 ##Tools
 

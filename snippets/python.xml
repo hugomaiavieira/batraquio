@@ -319,5 +319,17 @@ $0]]></text>
     <tag>notrespond</tag>
     <description>Should not respond to</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[|should| close_to(${1:value}, ${2:delta})
+$0]]></text>
+    <tag>respond</tag>
+    <description>Should close to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| close_to(${1:value}, ${2:delta})
+$0]]></text>
+    <tag>notrespond</tag>
+    <description>Should not close to</description>
+  </snippet>
 </snippets>
 
