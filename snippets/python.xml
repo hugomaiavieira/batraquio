@@ -343,5 +343,77 @@ $0]]></text>
     <tag>notclose</tag>
     <description>Should not close to</description>
   </snippet>
+  <snippet>
+    <text><![CDATA[|should| change(${1:something})
+$0]]></text>
+    <tag>change</tag>
+    <description>Should change</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| change(${1:something})
+$0]]></text>
+    <tag>notchange</tag>
+    <description>Should not change</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| change(${1:something}).by(${2:count})
+$0]]></text>
+    <tag>changeby</tag>
+    <description>Should change by</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| change(${1:something}).by(${2:count})
+$0]]></text>
+    <tag>notchangeby</tag>
+    <description>Should not change by</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| change(${1:something}).by_at_lest(${2:count})
+$0]]></text>
+    <tag>changebyleast</tag>
+    <description>Should change by at least</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| change(${1:something}).by_at_lest(${2:count})
+$0]]></text>
+    <tag>notchangebyleast</tag>
+    <description>Should not change by at least</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| change(${1:something}).by_at_most(${2:count})
+$0]]></text>
+    <tag>changebymost</tag>
+    <description>Should change by at most</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| change(${1:something}).by_at_most(${2:count})
+$0]]></text>
+    <tag>notchangebymost</tag>
+    <description>Should not change by at most</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| change(${1:something}).to(${2:value})
+$0]]></text>
+    <tag>changeto</tag>
+    <description>Should change to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| change(${1:something}).to(${2:value})
+$0]]></text>
+    <tag>notchangeto</tag>
+    <description>Should not change to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| change(${1:something})._from(${2:initial value}).to(${3:final value})
+$0]]></text>
+    <tag>changefromto</tag>
+    <description>Should change from to</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| change(${1:something})._from(${2:initial value}).to(${3:final value})
+$0]]></text>
+    <tag>notchangefromto</tag>
+    <description>Should not change from to</description>
+  </snippet>
 </snippets>
 

@@ -179,6 +179,30 @@ will not be demonstrate.
 
     `exception |should| be_thrown_by(call)`
 
+* Should change (change)
+
+    `action |should| change(something)`
+
+* Should change by (changeby)
+
+    `action |should| change(something).by(count)`
+
+* Should change by at least (changebyleast)
+
+    `action |should| change(something).by_at_lest(count)`
+
+* Should change by at most (changebymost)
+
+    `action |should| change(something).by_at_most(count)`
+
+* Should change from to (changefromto)
+
+    `action |should| change(something)._from(initial value).to(final value)
+
+* Should change to (changeto)
+
+    `action |should| change(something).to(value)`
+
 * Should close to (close)
 
     `actual |should| close_to(value, delta)`
