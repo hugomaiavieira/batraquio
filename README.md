@@ -147,46 +147,6 @@ will not be demonstrate.
 
     `actual |should_not| be(expected)`
 
-* Should include (include)
-
-    `collection |should| include(items)`
-
-* Should contain (contain)
-
-    `collection |should| contain(items)`
-
-* Should be into (into)
-
-    `item |should| be_into(collection)`
-
-* Should have (have)
-
-    `collection |should| have(quantity).something`
-
-* Should have at most (atmost)
-
-    `collection |should| have_at_most(quantity).something`
-
-* Should have at least (atleast)
-
-    `collection |should| have_at_least(quantity).something`
-
-* Should equal to (equal)
-
-    `actual |should| equal_to(expect)`
-
-* Should have all of (allof)
-
-    `collection |should| have_all_of(iterable)`
-
-* Should have any of (anyof)
-
-    `collection |should| have_any_of(iterable)`
-
-* Should be ended with (ended)
-
-    `string |should| be_ended_with(substring)`
-
 * Should be greater than (greater)
 
     `actual |should| be_greater_than(expected)`
@@ -194,6 +154,10 @@ will not be demonstrate.
 * Should be greater than or equal to (greaterequal)
 
     `actual |should| be_greater_than_or_equal_to(expected)`
+
+* Should be into (into)
+
+    `item |should| be_into(collection)`
 
 * Should be kind of (kind)
 
@@ -207,33 +171,73 @@ will not be demonstrate.
 
     `actual |should| be_less_than_or_equal_to(expected)`
 
-* Should be equal to ignoring case (ignoring)
-
-    `actual |should| be_equal_to_ignoring_case(expect)`
-
-* Should have in any order
-
-    `collection |should| have_in_any_order(iterable)`
-
-* Should be like
+* Should be like (like)
 
     `string |should| be_like(regex)`
 
-* Should throw
-
-    `call |should| throw(exception)`
-
-* Should be thrown by
+* Should be thrown by (thrownby)
 
     `exception |should| be_thrown_by(call)`
 
-* Should respond to
+* Should close to (close)
+
+    `actual |should| close_to(value, delta)`
+
+* Should contain (contain)
+
+    `collection |should| contain(items)`
+
+* Should ended with (ended)
+
+    `string |should| be_ended_with(substring)`
+
+* Should equal to (equal)
+
+    `actual |should| equal_to(expect)`
+
+* Should equal to ignoring case (ignoring)
+
+    `actual |should| be_equal_to_ignoring_case(expect)`
+
+* Should have (have)
+
+    `collection |should| have(quantity).something`
+
+* Should have all of (allof)
+
+    `collection |should| have_all_of(iterable)`
+
+* Should have any of (anyof)
+
+    `collection |should| have_any_of(iterable)`
+
+* Should have at least (atleast)
+
+    `collection |should| have_at_least(quantity).something`
+
+* Should have at most (atmost)
+
+    `collection |should| have_at_most(quantity).something`
+
+* Should have in any order (anyorder)
+
+    `collection |should| have_in_any_order(iterable)`
+
+* Should include (include)
+
+    `collection |should| include(items)`
+
+* Should respond to (respond)
 
     `object |should| respond_to('method')`
 
-* Should close to
+* Should throw (throw)
 
-    `actual |should| close_to(value, delta)`
+    `call |should| throw(exception)`
+
+* Should throw with message (throwmsg)
+
+    `call |should| throw(exception, message="message")`
 
 ##Tools
 

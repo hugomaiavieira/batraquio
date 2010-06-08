@@ -215,13 +215,13 @@ $0]]></text>
     <text><![CDATA[|should| be_equal_to_ignoring_case(${1:expect})
 $0]]></text>
     <tag>equalignoring</tag>
-    <description>Should be equal to ignoring case</description>
+    <description>Should equal to ignoring case</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should_not| be_equal_to_ignoring_case(${1:expect})
 $0]]></text>
     <tag>notequalignoring</tag>
-    <description>Should not be equal to ignoring case</description>
+    <description>Should not equal to ignoring case</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| have_in_any_order(${1:iterable})
@@ -258,6 +258,18 @@ $0]]></text>
 $0]]></text>
     <tag>notthrow</tag>
     <description>Should not throw</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should| throw(${1:exception}, message="${2:message}")
+$0]]></text>
+    <tag>throwmsg</tag>
+    <description>Should throw with message</description>
+  </snippet>
+  <snippet>
+    <text><![CDATA[|should_not| throw(${1:exception}, message="${2:message}")
+$0]]></text>
+    <tag>notthrowmsg</tag>
+    <description>Should not throw with message</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| be_thrown_by(${1:call})
@@ -322,13 +334,13 @@ $0]]></text>
   <snippet>
     <text><![CDATA[|should| close_to(${1:value}, ${2:delta})
 $0]]></text>
-    <tag>respond</tag>
+    <tag>close</tag>
     <description>Should close to</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should_not| close_to(${1:value}, ${2:delta})
 $0]]></text>
-    <tag>notrespond</tag>
+    <tag>notclose</tag>
     <description>Should not close to</description>
   </snippet>
 </snippets>
