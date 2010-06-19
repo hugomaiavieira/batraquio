@@ -128,8 +128,8 @@ de right part of the matcher.
 For example:
 
     [1,2,3] anyof                           # Press Tab
-    [1,2,3] |should| have_any_of(iterable)  # Type the iterable
-    [1,2,3] |should| have_any_of([1])       # Press Tab again to go to a new line below
+    [1,2,3] |should| include_any_of(iterable)  # Type the iterable
+    [1,2,3] |should| include_any_of([1])       # Press Tab again to go to a new line below
 
 Below the description of all snippets for the matchers.
 
@@ -197,7 +197,7 @@ will not be demonstrate.
 
 * Should change from to (changefromto)
 
-    `action |should| change(something)._from(initial value).to(final value)
+    `action |should| change(something)._from(initial value).to(final value)`
 
 * Should change to (changeto)
 
@@ -227,14 +227,6 @@ will not be demonstrate.
 
     `collection |should| have(quantity).something`
 
-* Should have all of (allof)
-
-    `collection |should| have_all_of(iterable)`
-
-* Should have any of (anyof)
-
-    `collection |should| have_any_of(iterable)`
-
 * Should have at least (atleast)
 
     `collection |should| have_at_least(quantity).something`
@@ -243,9 +235,21 @@ will not be demonstrate.
 
     `collection |should| have_at_most(quantity).something`
 
-* Should have in any order (anyorder)
+* Should include (include)
 
-    `collection |should| have_in_any_order(iterable)`
+    `collection |should| include(items)`
+
+* Should include all of (allof)
+
+    `collection |should| include_all_of(iterable)`
+
+* Should include any of (anyof)
+
+    `collection |should| include_any_of(iterable)`
+
+* Should include in any order (anyorder)
+
+    `collection |should| include_in_any_order(iterable)`
 
 * Should include (include)
 

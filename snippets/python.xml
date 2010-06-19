@@ -116,28 +116,28 @@ $0]]></text>
     <description>Should not equal to</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should| have_all_of(${1:iterable})
+    <text><![CDATA[|should| include_all_of(${1:iterable})
 $0]]></text>
     <tag>allof</tag>
-    <description>Should have all of</description>
+    <description>Should include all of</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should_not| have_all_of(${1:iterable})
+    <text><![CDATA[|should_not| include_all_of(${1:iterable})
 $0]]></text>
     <tag>notallof</tag>
-    <description>Should not have all of</description>
+    <description>Should not include all of</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should| have_any_of(${1:iterable})
+    <text><![CDATA[|should| include_any_of(${1:iterable})
 $0]]></text>
     <tag>anyof</tag>
-    <description>Should have any of</description>
+    <description>Should include any of</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should_not| have_any_of(${1:iterable})
+    <text><![CDATA[|should_not| include_any_of(${1:iterable})
 $0]]></text>
     <tag>notanyof</tag>
-    <description>Should not have any of</description>
+    <description>Should not include any of</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| be_ended_with(${1:substring})
@@ -224,16 +224,16 @@ $0]]></text>
     <description>Should not equal to ignoring case</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should| have_in_any_order(${1:iterable})
+    <text><![CDATA[|should| include_in_any_order(${1:iterable})
 $0]]></text>
     <tag>anyorder</tag>
-    <description>Should have in any order</description>
+    <description>Should include in any order</description>
   </snippet>
   <snippet>
-    <text><![CDATA[|should_not| have_in_any_order(${1:iterable})
+    <text><![CDATA[|should_not| include_in_any_order(${1:iterable})
 $0]]></text>
     <tag>notanyorder</tag>
-    <description>Should not have in any order</description>
+    <description>Should not include in any order</description>
   </snippet>
   <snippet>
     <text><![CDATA[|should| be_like(${1:regex})
