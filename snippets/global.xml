@@ -2,57 +2,113 @@
 <snippets>
   <snippet>
     <text><![CDATA[$<
-def formata_linha(linha):
-    pos_pipe = linha.find('|')
-    linha = linha[pos_pipe:]
-    linha_split = linha.split('|')
-    if linha[0:1]== '|':
-        del linha_split[0]
-    if linha[-1:]== '|':
-        del linha_split[-1]
-    return linha_split
+#coding:utf8
 
-def popula_matriz_e_max(matriz, max_coluna, linha):
-    linha = formata_linha(linha)
-    for coluna in linha:
-        coluna = coluna.strip()
-        matriz.append([coluna])
-        max_coluna.append(len(coluna))
+import re
 
-linhas = $GEDIT_SELECTED_TEXT.decode("utf-8").split('\n')
+class WhiteSpacesError(Exception): pass
+class DifferentNumberOfColumnsError(Exception): pass
 
-if linhas[-1] == '':
-    del linhas[-1]
+class Table(object):
 
-matriz = []
-max_coluna = []
+    def __init__(self, text):
+        text = text.decode('utf-8')
+        if re.match(r'^\s*$', text): raise WhiteSpacesError
 
-popula_matriz_e_max(matriz, max_coluna, linhas[0])
+        self.lines_str = self.text_to_lines(text)
 
-linhas = linhas[1:]
-for linha_pos in range(len(linhas)):
-    linha = linhas[linha_pos]
-    linha = formata_linha(linha)
-    for coluna in range(len(linha)):
-        palavra = linha[coluna]
-        palavra = palavra.strip()
-        matriz[coluna].append(palavra)
-        if max_coluna[coluna] < len(palavra):
-            max_coluna[coluna] = len(palavra)
+        self.columns_number = self.get_columns_number()
 
-tabela = ''
-for linha_pos in range(len(matriz[0])):
-    tabela += '|'
-    for coluna_pos in range(len(matriz)):
-        tamanho_da_celula = max_coluna[coluna_pos];
-        celula = ' ' + matriz[coluna_pos][linha_pos].ljust(tamanho_da_celula) + ' '
-        tabela += celula
-        tabela += '|'
-    tabela += '\n'
+        self.tabulation = self.get_tabulations()
+        self.lines_list = self.line_items()
+        self.columns = self.size_of_columns()
 
-return tabela
+
+    def get_columns_number(self):
+        pipes_number = self.lines_str[0].count('|')
+        for line in self.lines_str:
+            if line.count('|') != pipes_number:
+                raise DifferentNumberOfColumnsError
+        columns_number = pipes_number - 1
+        return columns_number
+
+
+
+    def text_to_lines(self, text):
+        lines = text.split('\n')
+        white = re.compile(r'^\s*$')
+
+        # del internal empty lines
+        i=0
+        while i < len(lines):
+            if re.match(white, lines[i]):
+                del lines[i]
+            i+=1
+
+        if re.match(white, lines[0]): lines = lines[1:] # del first empty line
+        if re.match(white, lines[-1]): lines = lines[:-1] # del last empty line
+
+        return lines
+
+    def get_tabulations(self):
+        tabulation = []
+        for line in self.lines_str:
+            tabulation.append(re.search(r'\s*', line).group())
+        return tabulation
+
+    def size_of_columns(self):
+        number_of_columns = len(self.lines_list[0])
+        columns = []
+        for number in range(number_of_columns):
+            columns.append(0)
+
+        for line in self.lines_list:
+            i=0
+            for item in line:
+                if len(item).__cmp__(columns[i]) == 1: # test if are greater than
+                    columns[i] = len(item)
+                i+=1
+        return columns
+
+
+    def line_items(self):
+        line_items = []
+        for line in self.lines_str:
+            line = line.split('|')
+            line = line[1:-1] # del first and last empty item (consequence of split)
+            items=[]
+            for item in line:
+                i = re.search(r'(\S+([ \t]+\S+)*)+', item)
+                if i:
+                    items.append(i.group())
+                else:
+                    items.append(" ")
+            line_items.append(items)
+        return line_items
+
+
+    def organize(self):
+        text = ""
+        i=0
+        for line in self.lines_list:
+            text += self.tabulation[i]
+            for index in range(len(self.columns)):
+                text += '| ' + line[index] + (self.columns[index] - len(line[index]))*' ' + ' '
+            text += '|\n'
+            i+=1
+        text = text[:-1] # del the last \n
+        return text
+
+try:
+    table = Table($GEDIT_SELECTED_TEXT)
+    return table.organize()
+except DifferentNumberOfColumnsError:
+    return $GEDIT_SELECTED_TEXT + "\nDifferent number of columns. Fix this and try again."
+except WhiteSpacesError:
+    return $GEDIT_SELECTED_TEXT
 >]]></text>
     <accelerator><![CDATA[<Shift><Control>f]]></accelerator>
     <description>Align Table</description>
   </snippet>
 </snippets>
+
