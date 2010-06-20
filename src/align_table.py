@@ -1,15 +1,36 @@
+#coding:utf8
+
 import re
+
+class WhiteSpacesError(Exception): pass
+class DifferentNumberOfColumnsError(Exception): pass
 
 class Table(object):
 
     def __init__(self, text):
-        self.lines_str = Table.text_to_list(text)
-        self.tabulation = self.max_tabulation()
+        text = text.decode('utf-8')
+        if re.match(r'^\s*$', text): raise WhiteSpacesError
+
+        self.lines_str = self.text_to_lines(text)
+
+        self.columns_number = self.get_columns_number()
+
+        self.tabulation = self.get_tabulations()
         self.lines_list = self.line_items()
         self.columns = self.size_of_columns()
 
-    @classmethod
-    def text_to_list(self, text):
+
+    def get_columns_number(self):
+        pipes_number = self.lines_str[0].count('|')
+        for line in self.lines_str:
+            if line.count('|') != pipes_number:
+                raise DifferentNumberOfColumnsError
+        columns_number = pipes_number - 1
+        return columns_number
+
+
+
+    def text_to_lines(self, text):
         lines = text.split('\n')
         white = re.compile(r'^\s*$')
 
@@ -25,13 +46,10 @@ class Table(object):
 
         return lines
 
-    def max_tabulation(self):
-        tabulation = ''
+    def get_tabulations(self):
+        tabulation = []
         for line in self.lines_str:
-            tab = re.search(r'\s*', line)
-            if tab: tab = tab.group()
-            if len(tab) > len(tabulation):
-                tabulation = tab
+            tabulation.append(re.search(r'\s*', line).group())
         return tabulation
 
     def size_of_columns(self):
@@ -67,11 +85,13 @@ class Table(object):
 
     def organize(self):
         text = ""
+        i=0
         for line in self.lines_list:
-            text += self.tabulation
+            text += self.tabulation[i]
             for index in range(len(self.columns)):
                 text += '| ' + line[index] + (self.columns[index] - len(line[index]))*' ' + ' '
             text += '|\n'
+            i+=1
         text = text[:-1] # del the last \n
         return text
 
