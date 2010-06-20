@@ -92,3 +92,11 @@ class TableSpec(unittest.TestCase):
         | Hugo Maia Vieira | (22) 8512-7751 | UENF    |
         | Rodrigo Manhães  | (22) 9145-8722 | NSI     |""")
 
+        text = """| name | phone| company     |
+    |Hugo Maia Vieira| (22) 8512-7751 | UENF |
+    |Rodrigo Manhães | (22) 9145-8722 |NSI|"""
+        table = Table(text)
+        table.organize() |should| equal_to(u"""| name             | phone          | company |
+    | Hugo Maia Vieira | (22) 8512-7751 | UENF    |
+    | Rodrigo Manhães  | (22) 9145-8722 | NSI     |""")
+

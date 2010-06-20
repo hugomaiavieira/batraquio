@@ -61,7 +61,7 @@ class Table(object):
         for line in self.lines_list:
             i=0
             for item in line:
-                if len(item) > columns[i]:
+                if len(item).__cmp__(columns[i]) == 1: # test if are greater than
                     columns[i] = len(item)
                 i+=1
         return columns
@@ -94,4 +94,13 @@ class Table(object):
             i+=1
         text = text[:-1] # del the last \n
         return text
+
+# Complement code for the snippet
+#try:
+#    table = Table($GEDIT_SELECTED_TEXT)
+#    return table.organize()
+#except DifferentNumberOfColumnsError:
+#    return $GEDIT_SELECTED_TEXT + "\nDifferent number of columns. Fix this and try again."
+#except WhiteSpacesError:
+#    return $GEDIT_SELECTED_TEXT
 
