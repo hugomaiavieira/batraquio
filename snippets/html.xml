@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="html">
+  <snippet>
+    <text><![CDATA[$<
+#coding:utf8
+
+def scape_html_tags(code):
+    code = code.replace('<', '&lt;')
+    code = code.replace('\>', '&gt;')
+    return code
+
+return scape_html_tags($GEDIT_SELECTED_TEXT)
+>]]></text>
+    <accelerator><![CDATA[<Shift><Control>h]]></accelerator>
+    <description>Scape HTML tags</description>
+  </snippet>
+</snippets>
+

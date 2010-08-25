@@ -115,6 +115,14 @@ Select this text, and press **SHIFT+CTRL+F**, the result should be:
 instantly.
 
 
+###Scape Html tags
+
+If you are writing HTML code for your site, but this code must to be printed as
+is, like code an example, you must to replace the characters &lt; and &gt; by
+its  special html sequence. Do this while you are writing is not fun. So you can
+press **SHIFT+CTRL+H** and this snippet will do this for you.
+
+
 ###Should-dsl
 
 [Should-dsl](http://github.com/hugobr/should-dsl) is an amazing python package
