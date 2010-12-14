@@ -123,6 +123,21 @@ its  special html sequence. Do this while you are writing is not fun. So you can
 press **SHIFT+CTRL+H** and this snippet will do this for you.
 
 
+###Licenses
+
+In all of your projects you have to add the license terms at top of the files
+or/and in one separated LICENSE file. Instead of copy-paste you can use the
+licenses snippets. Fill free to add some license that you use!
+
+The licenses available are:
+
+  - **License name** (disparator)
+  - [**BSD**](http://www.opensource.org/licenses/bsd-license.php) (bsd),
+  - [**GPL 2**](http://www.opensource.org/licenses/gpl-2.0.php) (gpltwo)
+  - [**GPL 3**](http://www.opensource.org/licenses/gpl-3.0.html) (gplthree)
+  - [**MIT**](http://www.opensource.org/licenses/mit-license.php) (mit)
+
+
 ###Should-dsl
 
 [Should-dsl](http://github.com/hugobr/should-dsl) is an amazing python package
@@ -135,7 +150,7 @@ de right part of the matcher.
 
 For example:
 
-    [1,2,3] anyof                           # Press Tab
+    [1,2,3] anyof                              # Press Tab
     [1,2,3] |should| include_any_of(iterable)  # Type the iterable
     [1,2,3] |should| include_any_of([1])       # Press Tab again to go to a new line below
 
@@ -333,4 +348,3 @@ If I press the shortcut key F5, a panel will open and show the output of the exe
 ##Next steps
 
 Add snippets for django template tags and most common licences text.
-
