@@ -26,12 +26,12 @@ Finally to finish the install:
     $ cd hugomaiavieira-batraquio-*
     $ ./install.sh
 
+To use the snippets, you have to enable the *snippets* (*trechos* in Portuguese)
+plugin. You can do this following (Edit -> Preferences -> Plug-ins).
+
 *Note*: If you're with an open Gedit instance, close it and open again.
 
 ##Snippets
-
-To use this, you have to enable the *snippets* (*trechos* in Portuguese) plugin.
-You can do this following (Edit -> Preferences -> Plug-ins).
 
 ###Smart def
 
