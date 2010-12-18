@@ -18,6 +18,9 @@ To install, just do this on terminal:
 
 ##Snippets
 
+To use this, you have to enable the *snippets* (*trechos* in portuguese) plugin.
+You can do this following (Edit -> Preferences -> Plug-ins).
+
 ###Smart def
 
 The Smart def snippet speeds up the method definition. The activation is made
