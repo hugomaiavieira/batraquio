@@ -12,13 +12,25 @@ write specifications instead mere tests.
 
 ##Install
 
-To install, just do this on terminal:
+First, download the script follow the link **Download** at the top of this page.
+After that click at **Download .tar.gz**.
 
-    ./install.sh
+Next, unpack the file running on terminal (assuming you downloaded the file in
+the Download dir):
+
+    $ cd Download
+    $ tar xzfv hugomaiavieira-batraquio-*.tar.gz
+
+Finally to finish the install:
+
+    $ cd hugomaiavieira-batraquio-*
+    $ ./install.sh
+
+*Note*: If you're with an open Gedit instance, close it and open again.
 
 ##Snippets
 
-To use this, you have to enable the *snippets* (*trechos* in portuguese) plugin.
+To use this, you have to enable the *snippets* (*trechos* in Portuguese) plugin.
 You can do this following (Edit -> Preferences -> Plug-ins).
 
 ###Smart def
