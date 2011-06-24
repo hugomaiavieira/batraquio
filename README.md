@@ -1,7 +1,7 @@
 #Batraquio
 
-Batraquio is a set of gedit snippets and tools. The goal is help and speed up
-the development, mostly using BDD approach.
+Batraquio is a set of gedit plugins, snippets and tools. The goal is help and
+improve the developers production.
 
 I strongly recommend that you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
@@ -106,28 +106,6 @@ You only have to write *Given*, *When* or *Then* (for freshen or pycukes) or
 and the method will be created. The name for the method is created replacing
 spaces for undescore on the step definition text. The params list is created
 based on the regex finded in the step definition text.
-
-
-###Table alignment
-
-Let's say you are using Cucumber (or some Cucumber like) to use a BDD approach
-on your project.
-And let's say that you are working with table on your tests.
-So, if you digit:
-
-    | name  | email |
-    | Hugo Maia Vieira | hugomaiavieira@gmail.com |
-    | Gabriel L. Oliveira | ciberglo@gmail.com |
-    | Rodrigo Manhães | rmanhaes@gmail.com |
-
-Select this text, and press **SHIFT+CTRL+F**, the result should be:
-
-    | name                | email                    |
-    | Hugo Maia Vieira    | hugomaiavieira@gmail.com |
-    | Gabriel L. Oliveira | ciberglo@gmail.com       |
-    | Rodrigo Manhães     | rmanhaes@gmail.com       |
-
-instantly.
 
 
 ###Scape Html tags
@@ -363,3 +341,4 @@ If I press the shortcut key F5, a panel will open and show the output of the exe
 ##Next steps
 
 Add snippets for django template tags and most common licences text.
+

@@ -3,7 +3,7 @@
 import unittest
 from should_dsl import should, should_not
 
-from align_table import Table, WhiteSpacesError, DifferentNumberOfColumnsError
+from table import Table, WhiteSpacesError, DifferentNumberOfColumnsError
 
 class TableSpec(unittest.TestCase):
 
