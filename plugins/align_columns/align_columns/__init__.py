@@ -98,7 +98,7 @@ class AlignColumnsWindowHelper:
             return
         except DifferentNumberOfColumnsError:
             message = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_OK,
-                                        'You write or select lines with different number of columns.')
+                                        'The selection has lines with different numbers of columns.')
             message.run()
             message.destroy()
 
