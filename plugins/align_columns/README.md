@@ -3,8 +3,8 @@
 Let's say you're using Cucumber (or some Cucumber like) to write the functional
 tests of your project and you are working with examples on your tests.
 Write the examples are boring, because you should put the spaces and when you
-edit or write new examples, the spaces may change. Sometimes the columns came a
-really mess like this:
+edit or write new examples, the spaces may change. Sometimes the columns become
+a mess like this:
 
     | name  | email|phone|
     | Hugo Maia Vieira | hugomaiavieira@gmail.com |(22) 2727-2727|
