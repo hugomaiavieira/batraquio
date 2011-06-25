@@ -33,7 +33,7 @@ plugin. You can do this following (Edit -> Preferences -> Plug-ins).
 
 ## Plugins
 
-[Align table](https://github.com/hugomaiavieira/batraquio/tree/master/plugins/align/)
+[Align table](http://github.com/hugomaiavieira/batraquio/tree/master/plugins/align_table)
 
 ##Snippets
 
