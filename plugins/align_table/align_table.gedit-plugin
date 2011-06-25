@@ -1,9 +1,9 @@
 [Gedit Plugin]
 Loader=python
-Module=tabulate
+Module=align_table
 IAge=2
-Name=Tabulate
-Description=Tabulate text blocks
+Name=Align table
+Description=Align text blocks like a table
 Authors=Hugo Maia Vieira <hugomaiavieira@gmail.com>
 Copyright=Copyright © 2011 Hugo Maia Vieira <hugomaiavieira@gmail.com>
-Website=http://github.com/hugomaiavieira/batraquio/plugins/tabulate
+Website=http://github.com/hugomaiavieira/batraquio/plugins/align_table

@@ -25,13 +25,13 @@ ui_str = """<ui>
   <menubar name="MenuBar">
     <menu name="EditMenu" action="Edit">
       <placeholder name="EditOps_6">
-        <menuitem name="Tabulate" action="Tabulate"/>
+        <menuitem name="Align table" action="AlignTable"/>
       </placeholder>
     </menu>
   </menubar>
 </ui>
 """
-class TabulateWindowHelper:
+class AlignTableWindowHelper:
     def __init__(self, plugin, window):
         self._window = window
         self._plugin = plugin
@@ -52,13 +52,13 @@ class TabulateWindowHelper:
         manager = self._window.get_ui_manager()
 
         # Create a new action group
-        self._action_group = gtk.ActionGroup("TabulateActions")
-        self._action_group.add_actions([("Tabulate",
+        self._action_group = gtk.ActionGroup("AlignTableActions")
+        self._action_group.add_actions([("AlignTable",
                                          None,
-                                         _("Tabulate"),
-                                         '<Control>t',
-                                         _("Tabulate the text block"),
-                                         self.on_tabulate_activate)])
+                                         _("Align table"),
+                                         '<Control><Alt>a',
+                                         _("Align text blocks like a table"),
+                                         self.on_align_table_activate)])
 
         # Insert the action group
         manager.insert_action_group(self._action_group, -1)
@@ -83,7 +83,7 @@ class TabulateWindowHelper:
         self._action_group.set_sensitive(self._window.get_active_document() != None)
 
     # Menu activate handlers
-    def on_tabulate_activate(self, action):
+    def on_align_table_activate(self, action):
         doc = self._window.get_active_document()
         bounds = doc.get_selection_bounds()
         if not doc or not bounds:
@@ -91,9 +91,9 @@ class TabulateWindowHelper:
         text = doc.get_text(*bounds)
         try:
             table = Table(text)
-            text_tabulated = table.organize()
+            aligned_table = table.align()
             doc.delete_interactive(*bounds, default_editable=True)
-            doc.insert(bounds[0], text_tabulated)
+            doc.insert(bounds[0], aligned_table)
         except WhiteSpacesError:
             return
         except DifferentNumberOfColumnsError:
@@ -103,13 +103,13 @@ class TabulateWindowHelper:
             message.destroy()
 
 
-class TabulatePlugin(gedit.Plugin):
+class AlignTablePlugin(gedit.Plugin):
     def __init__(self):
         gedit.Plugin.__init__(self)
         self._instances = {}
 
     def activate(self, window):
-        self._instances[window] = TabulateWindowHelper(self, window)
+        self._instances[window] = AlignTableWindowHelper(self, window)
 
     def deactivate(self, window):
         self._instances[window].deactivate()

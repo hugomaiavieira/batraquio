@@ -87,8 +87,8 @@ class TableSpec(unittest.TestCase):
         self.table.columns[2] |should| equal_to(7)
 
 
-    def it_should_organize_the_table(self):
-        self.table.organize() |should| equal_to(u"""        | name             | phone          | company |
+    def it_should_align_the_table(self):
+        self.table.align() |should| equal_to(u"""        | name             | phone          | company |
         | Hugo Maia Vieira | (22) 8512-7751 | UENF    |
         | Rodrigo Manhães  | (22) 9145-8722 | NSI     |""")
 
@@ -96,7 +96,7 @@ class TableSpec(unittest.TestCase):
     |Hugo Maia Vieira| (22) 8512-7751 | UENF |
     |Rodrigo Manhães | (22) 9145-8722 |NSI|"""
         table = Table(text)
-        table.organize() |should| equal_to(u"""| name             | phone          | company |
+        table.align() |should| equal_to(u"""| name             | phone          | company |
     | Hugo Maia Vieira | (22) 8512-7751 | UENF    |
     | Rodrigo Manhães  | (22) 9145-8722 | NSI     |""")
 

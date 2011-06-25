@@ -1,4 +1,4 @@
-# Tabulate
+# Align table
 
 Let's say you're using Cucumber (or some Cucumber like) to write the functional
 tests of your project and you are working with examples on your tests.
@@ -11,7 +11,7 @@ really mess like this:
     | Gabriel L. Oliveira | ciberglo@gmail.com |(22) 2525-2525            |
     | Rodrigo Manhães | rmanhaes@gmail.com |      (22) 2626-2626|
 
-Select this text, and press **Ctrl+t**, the result should be:
+Select this text, and press **Ctrl+Alt+a**, the result should be:
 
     | name                | email                    | phone          |
     | Hugo Maia Vieira    | hugomaiavieira@gmail.com | (22) 2727-2727 |

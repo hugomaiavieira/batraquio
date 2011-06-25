@@ -31,6 +31,10 @@ plugin. You can do this following (Edit -> Preferences -> Plug-ins).
 
 *Note*: If you're with an open Gedit instance, close it and open again.
 
+## Plugins
+
+[Align table](https://github.com/hugomaiavieira/batraquio/tree/master/plugins/align/)
+
 ##Snippets
 
 ###Smart def

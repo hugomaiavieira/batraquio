@@ -96,7 +96,7 @@ class Table(object):
         return line_items
 
 
-    def organize(self):
+    def align(self):
         text = ""
         i=0
         for line in self.lines_list:

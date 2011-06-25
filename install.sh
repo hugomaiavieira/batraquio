@@ -69,7 +69,7 @@ then
     mkdir -p ~/.gnome2/gedit/plugins
     cp $FOLDER/plugins/* ~/.gnome2/gedit/plugins/
 else
-    for PLUGIN in $(ls --hide=*.md --ignore=specs $FOLDER/plugins/); do
+    for PLUGIN in $(ls --ignore=*.md $FOLDER/plugins/); do
         cp -r $FOLDER/plugins/$PLUGIN/* ~/.gnome2/gedit/plugins/
     done
 fi
