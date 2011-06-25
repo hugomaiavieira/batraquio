@@ -74,7 +74,7 @@ else
     done
 fi
 
- Copy Snippets
+# Copy Snippets
 if [ ! -d $HOME/.gnome2/gedit/snippets ]
 then
     mkdir -p ~/.gnome2/gedit/snippets
