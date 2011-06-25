@@ -18,20 +18,20 @@ from gettext import gettext as _
 import gtk
 import gedit
 
-from table import Table, DifferentNumberOfColumnsError, WhiteSpacesError
+from text_block import TextBlock, DifferentNumberOfColumnsError, WhiteSpacesError
 
 # Menu item example, insert a new item in the Tools menu
 ui_str = """<ui>
   <menubar name="MenuBar">
     <menu name="EditMenu" action="Edit">
       <placeholder name="EditOps_6">
-        <menuitem name="Align table" action="AlignTable"/>
+        <menuitem name="Align columns" action="AlignColumns"/>
       </placeholder>
     </menu>
   </menubar>
 </ui>
 """
-class AlignTableWindowHelper:
+class AlignColumnsWindowHelper:
     def __init__(self, plugin, window):
         self._window = window
         self._plugin = plugin
@@ -52,13 +52,13 @@ class AlignTableWindowHelper:
         manager = self._window.get_ui_manager()
 
         # Create a new action group
-        self._action_group = gtk.ActionGroup("AlignTableActions")
-        self._action_group.add_actions([("AlignTable",
+        self._action_group = gtk.ActionGroup("AlignColumnsActions")
+        self._action_group.add_actions([("AlignColumns",
                                          None,
-                                         _("Align table"),
+                                         _("Align columns"),
                                          '<Control><Alt>a',
-                                         _("Align text blocks like a table"),
-                                         self.on_align_table_activate)])
+                                         _("Align text blocks into columns separated by pipe ( | )"),
+                                         self.on_align_columns_activate)])
 
         # Insert the action group
         manager.insert_action_group(self._action_group, -1)
@@ -83,33 +83,33 @@ class AlignTableWindowHelper:
         self._action_group.set_sensitive(self._window.get_active_document() != None)
 
     # Menu activate handlers
-    def on_align_table_activate(self, action):
+    def on_align_columns_activate(self, action):
         doc = self._window.get_active_document()
         bounds = doc.get_selection_bounds()
         if not doc or not bounds:
             return
         text = doc.get_text(*bounds)
         try:
-            table = Table(text)
-            aligned_table = table.align()
+            text_block = TextBlock(text)
+            aligned_columns = text_block.align()
             doc.delete_interactive(*bounds, default_editable=True)
-            doc.insert(bounds[0], aligned_table)
+            doc.insert(bounds[0], aligned_columns)
         except WhiteSpacesError:
             return
         except DifferentNumberOfColumnsError:
             message = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_OK,
-                                        'Wrong number of columns. Check the selected block.')
+                                        'You write or select lines with different number of columns.')
             message.run()
             message.destroy()
 
 
-class AlignTablePlugin(gedit.Plugin):
+class AlignColumnsPlugin(gedit.Plugin):
     def __init__(self):
         gedit.Plugin.__init__(self)
         self._instances = {}
 
     def activate(self, window):
-        self._instances[window] = AlignTableWindowHelper(self, window)
+        self._instances[window] = AlignColumnsWindowHelper(self, window)
 
     def deactivate(self, window):
         self._instances[window].deactivate()

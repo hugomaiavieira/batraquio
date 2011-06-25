@@ -18,7 +18,7 @@ import re
 class WhiteSpacesError(Exception): pass
 class DifferentNumberOfColumnsError(Exception): pass
 
-class Table(object):
+class TextBlock(object):
 
     def __init__(self, text):
         text = text.decode('utf-8')

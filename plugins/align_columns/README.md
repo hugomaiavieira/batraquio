@@ -1,9 +1,9 @@
-# Align table
+# Align columns
 
 Let's say you're using Cucumber (or some Cucumber like) to write the functional
 tests of your project and you are working with examples on your tests.
-Write the examples from scratch is boring, because you should put the spaces and
-when you write new examples, the espaces may change. Sometimes the tables came a
+Write the examples are boring, because you should put the spaces and when you
+edit or write new examples, the spaces may change. Sometimes the columns came a
 really mess like this:
 
     | name  | email|phone|
@@ -18,7 +18,9 @@ Select this text, and press **Ctrl+Alt+a**, the result should be:
     | Gabriel L. Oliveira | ciberglo@gmail.com       | (22) 2525-2525 |
     | Rodrigo Manhães     | rmanhaes@gmail.com       | (22) 2626-2626 |
 
-**You should select the entirely block from the first to the last `|`.**
+**You should select the entirely block from the first to the last `|`.** If you
+write or select lines with different number of columns, a warning dialog will
+shows up.
 
 # License
 
