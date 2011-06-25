@@ -18,7 +18,7 @@ from gettext import gettext as _
 import gtk
 import gedit
 
-from table import Table
+from table import Table, DifferentNumberOfColumnsError, WhiteSpacesError
 
 # Menu item example, insert a new item in the Tools menu
 ui_str = """<ui>
@@ -89,10 +89,18 @@ class TabulateWindowHelper:
         if not doc or not bounds:
             return
         text = doc.get_text(*bounds)
-        table = Table(text)
-        text_tabulated = table.organize()
-        doc.delete_interactive(*bounds, default_editable=True)
-        doc.insert(bounds[0], text_tabulated)
+        try:
+            table = Table(text)
+            text_tabulated = table.organize()
+            doc.delete_interactive(*bounds, default_editable=True)
+            doc.insert(bounds[0], text_tabulated)
+        except WhiteSpacesError:
+            return
+        except DifferentNumberOfColumnsError:
+            message = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_OK,
+                                        'Wrong number of columns. Check the selected block.')
+            message.run()
+            message.destroy()
 
 
 class TabulatePlugin(gedit.Plugin):
