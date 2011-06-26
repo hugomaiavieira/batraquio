@@ -1,7 +1,7 @@
 #Batraquio
 
-Batraquio is a set of gedit plugins, snippets and tools. The goal is help and
-improve the developers production.
+Batraquio is a set of gedit snippets and tools. The goal is help and improve the
+developers production.
 
 I strongly recommend that you install the [gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
@@ -30,10 +30,6 @@ To use the snippets, you have to enable the *snippets* (*trechos* in Portuguese)
 plugin. You can do this following (Edit -> Preferences -> Plug-ins).
 
 *Note*: If you're with an open Gedit instance, close it and open again.
-
-## Plugins
-
-- [Align columns](http://github.com/hugomaiavieira/batraquio/tree/master/plugins/align_columns)
 
 ##Snippets
 
