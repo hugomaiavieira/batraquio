@@ -63,17 +63,6 @@ then
     mkdir -p ~/.gnome2/gedit
 fi
 
-# Copy Plugins
-if [ ! -d $HOME/.gnome2/gedit/plugins ]
-then
-    mkdir -p ~/.gnome2/gedit/plugins
-    cp $FOLDER/plugins/* ~/.gnome2/gedit/plugins/
-else
-    for PLUGIN in $(ls --ignore=*.md $FOLDER/plugins/); do
-        cp -r $FOLDER/plugins/$PLUGIN/* ~/.gnome2/gedit/plugins/
-    done
-fi
-
 # Copy Snippets
 if [ ! -d $HOME/.gnome2/gedit/snippets ]
 then

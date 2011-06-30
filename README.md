@@ -3,12 +3,12 @@
 Batraquio is a set of gedit snippets and tools. The goal is help and improve the
 developers production.
 
-I strongly recommend that you install the [gmate](http://github.com/gmate/gmate)
+I strongly recommend that you install the [Gmate](http://github.com/gmate/gmate)
 and the package gedit-plugins.
 
-**Obs.:** I'm using *it* instead *test* in the methods because I use the
-[Specloud](http://github.com/hugobr/specloud) to run my specs. With that I can
-write specifications instead mere tests.
+**Obs.:** The *Licences snippets* and the [Align Columns](http://github.com/algorich/align-columns)
+plugin were removed because now they are included in the
+[Gmate](http://github.com/gmate/gmate) package
 
 ##Install
 
@@ -32,6 +32,10 @@ plugin. You can do this following (Edit -> Preferences -> Plug-ins).
 *Note*: If you're with an open Gedit instance, close it and open again.
 
 ##Snippets
+
+**Obs.:** I'm using *it* instead *test* in the methods because I use the
+[Specloud](http://github.com/hugobr/specloud) to run my specs. With that I can
+write specifications instead mere tests.
 
 ###Smart def
 
@@ -114,21 +118,6 @@ If you are writing HTML code for your site, but this code must to be printed as
 is, like code an example, you must to replace the characters &lt; and &gt; by
 its  special html sequence. Do this while you are writing is not fun. So you can
 press **SHIFT+CTRL+H** and this snippet will do this for you.
-
-
-###Licenses
-
-In all of your projects you have to add the license terms at top of the files
-or/and in one separated LICENSE file. Instead of copy-paste you can use the
-licenses snippets. Fill free to add some license that you use!
-
-The licenses available are:
-
-  - **License name** (disparator)
-  - [**BSD**](http://www.opensource.org/licenses/bsd-license.php) (bsd),
-  - [**GPL 2**](http://www.opensource.org/licenses/gpl-2.0.php) (gpltwo)
-  - [**GPL 3**](http://www.opensource.org/licenses/gpl-3.0.html) (gplthree)
-  - [**MIT**](http://www.opensource.org/licenses/mit-license.php) (mit)
 
 
 ###Should-dsl
